@@ -1,134 +1,68 @@
 [
   {
-    "id": "FOOL",
-    "ponderedMeaning": [
-
-    ]
+    "id": "FOOL"
   },
   {
-    "id": "MAGICIAN",
-    "ponderedMeaning": [
-
-    ]
+    "id": "MAGICIAN"
   },
   {
-    "id": "HIGH_PRIESTESS",
-    "ponderedMeaning": [
-
-    ]
+    "id": "HIGH_PRIESTESS"
   },
   {
-    "id": "EMPRESS",
-    "ponderedMeaning": [
-
-    ]
+    "id": "EMPRESS"
   },
   {
-    "id": "EMPEROR",
-    "ponderedMeaning": [
-
-    ]
+    "id": "EMPEROR"
   },
   {
-    "id": "HIEROPHANT",
-    "ponderedMeaning": [
-
-    ]
+    "id": "HIEROPHANT"
   },
   {
-    "id": "LOVERS",
-    "ponderedMeaning": [
-
-    ]
+    "id": "LOVERS"
   },
   {
-    "id": "CHARIOT",
-    "ponderedMeaning": [
-
-    ]
+    "id": "CHARIOT"
   },
   {
-    "id": "STRENGTH",
-    "ponderedMeaning": [
-
-    ]
+    "id": "STRENGTH"
   },
   {
-    "id": "HERMIT",
-    "ponderedMeaning": [
-
-    ]
+    "id": "HERMIT"
   },
   {
-    "id": "WHEEL_FORTUNE",
-    "ponderedMeaning": [
-
-    ]
+    "id": "WHEEL_FORTUNE"
   },
   {
-    "id": "JUSTICE",
-    "ponderedMeaning": [
-
-    ]
+    "id": "JUSTICE"
   },
   {
-    "id": "HANGED_MAN",
-    "ponderedMeaning": [
-
-    ]
+    "id": "HANGED_MAN"
   },
   {
-    "id": "DEATH",
-    "ponderedMeaning": [
-
-    ]
+    "id": "DEATH"
   },
   {
-    "id": "TEMPERANCE",
-    "ponderedMeaning": [
-
-    ]
+    "id": "TEMPERANCE"
   },
   {
-    "id": "DEVIL",
-    "ponderedMeaning": [
-
-    ]
+    "id": "DEVIL"
   },
   {
-    "id": "TOWER",
-    "ponderedMeaning": [
-
-    ]
+    "id": "TOWER"
   },
   {
-    "id": "STAR",
-    "ponderedMeaning": [
-
-    ]
+    "id": "STAR"
   },
   {
-    "id": "MOON",
-    "ponderedMeaning": [
-
-    ]
+    "id": "MOON"
   },
   {
-    "id": "SUN",
-    "ponderedMeaning": [
-
-    ]
+    "id": "SUN"
   },
   {
-    "id": "JUDGMENT",
-    "ponderedMeaning": [
-
-    ]
+    "id": "JUDGMENT"
   },
   {
-    "id": "WORLD",
-    "ponderedMeaning": [
-
-    ]
+    "id": "WORLD"
   }
 ]

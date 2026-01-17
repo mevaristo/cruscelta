@@ -1,86 +1,44 @@
 [
   {
-    "id": "ACE_WANDS",
-    "ponderedMeaning": [
-
-    ]
+    "id": "ACE_WANDS"
   },
   {
-    "id": "TWO_WANDS",
-    "ponderedMeaning": [
-
-    ]
+    "id": "TWO_WANDS"
   },
   {
-    "id": "THREE_WANDS",
-    "ponderedMeaning": [
-
-    ]
+    "id": "THREE_WANDS"
   },
   {
-    "id": "FOUR_WANDS",
-    "ponderedMeaning": [
-
-    ]
+    "id": "FOUR_WANDS"
   },
   {
-    "id": "FIVE_WANDS",
-    "ponderedMeaning": [
-
-    ]
+    "id": "FIVE_WANDS"
   },
   {
-    "id": "SIX_WANDS",
-    "ponderedMeaning": [
-
-    ]
+    "id": "SIX_WANDS"
   },
   {
-    "id": "SEVEN_WANDS",
-    "ponderedMeaning": [
-
-    ]
+    "id": "SEVEN_WANDS"
   },
   {
-    "id": "EIGHT_WANDS",
-    "ponderedMeaning": [
-
-    ]
+    "id": "EIGHT_WANDS"
   },
   {
-    "id": "NINE_WANDS",
-    "ponderedMeaning": [
-
-    ]
+    "id": "NINE_WANDS"
   },
   {
-    "id": "TEN_WANDS",
-    "ponderedMeaning": [
-
-    ]
+    "id": "TEN_WANDS"
   },
   {
-    "id": "PAGE_WANDS",
-    "ponderedMeaning": [
-
-    ]
+    "id": "PAGE_WANDS"
   },
   {
-    "id": "KNIGHT_WANDS",
-    "ponderedMeaning": [
-
-    ]
+    "id": "KNIGHT_WANDS"
   },
   {
-    "id": "QUEEN_WANDS",
-    "ponderedMeaning": [
-
-    ]
+    "id": "QUEEN_WANDS"
   },
   {
-    "id": "KING_WANDS",
-    "ponderedMeaning": [
-
-    ]
+    "id": "KING_WANDS"
   }
 ]

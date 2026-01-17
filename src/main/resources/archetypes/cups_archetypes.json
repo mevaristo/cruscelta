@@ -1,87 +1,44 @@
 [
   {
-    "id": "ACE_CUPS",
-    "ponderedMeaning": [
-
-    ]
+    "id": "ACE_CUPS"
   },
   {
-    "id": "TWO_CUPS",
-    "mundane": "",
-    "psychological": "",
-    "advice": "",
-    "shadow": ""
+    "id": "TWO_CUPS"
   },
   {
-    "id": "THREE_CUPS",
-    "ponderedMeaning": [
-
-    ]
+    "id": "THREE_CUPS"
   },
   {
-    "id": "FOUR_CUPS",
-    "ponderedMeaning": [
-
-    ]
+    "id": "FOUR_CUPS"
   },
   {
-    "id": "FIVE_CUPS",
-    "ponderedMeaning": [
-
-    ]
+    "id": "FIVE_CUPS"
   },
   {
-    "id": "SIX_CUPS",
-    "ponderedMeaning": [
-
-    ]
+    "id": "SIX_CUPS"
   },
   {
-    "id": "SEVEN_CUPS",
-    "ponderedMeaning": [
-
-    ]
+    "id": "SEVEN_CUPS"
   },
   {
-    "id": "EIGHT_CUPS",
-    "ponderedMeaning": [
-
-    ]
+    "id": "EIGHT_CUPS"
   },
   {
-    "id": "NINE_CUPS",
-    "ponderedMeaning": [
-
-    ]
+    "id": "NINE_CUPS"
   },
   {
-    "id": "TEN_CUPS",
-    "ponderedMeaning": [
-
-    ]
+    "id": "TEN_CUPS"
   },
   {
-    "id": "PAGE_CUPS",
-    "ponderedMeaning": [
-
-    ]
+    "id": "PAGE_CUPS"
   },
   {
-    "id": "KNIGHT_CUPS",
-    "ponderedMeaning": [
-
-    ]
+    "id": "KNIGHT_CUPS"
   },
   {
-    "id": "QUEEN_CUPS",
-    "ponderedMeaning": [
-
-    ]
+    "id": "QUEEN_CUPS"
   },
   {
-    "id": "KING_CUPS",
-    "ponderedMeaning": [
-
-    ]
+    "id": "KING_CUPS"
   }
 ]
