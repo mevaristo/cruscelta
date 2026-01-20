@@ -1,6 +1,6 @@
 package com.cruscelta.application.service;
 
-import com.cruscelta.domain.port.inbound.ArchetypeCardLoader;
+import com.cruscelta.domain.port.inbound.ArchetypeCardLoaderPort;
 import com.cruscelta.domain.port.inbound.ArchetypeDrawUseCase;
 import com.cruscelta.domain.model.ArchetypeCard;
 import lombok.RequiredArgsConstructor;
@@ -16,7 +16,7 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class ArchetypeDrawService implements ArchetypeDrawUseCase {
-    private final ArchetypeCardLoader archetypeCardLoader;
+    private final ArchetypeCardLoaderPort archetypeCardLoader;
 
     @Override
     public List<ArchetypeCard> draw(int quantity) {

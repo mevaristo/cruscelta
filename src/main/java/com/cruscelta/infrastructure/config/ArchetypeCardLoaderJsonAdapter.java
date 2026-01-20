@@ -1,6 +1,6 @@
 package com.cruscelta.infrastructure.config;
 
-import com.cruscelta.domain.port.inbound.ArchetypeCardLoader;
+import com.cruscelta.domain.port.inbound.ArchetypeCardLoaderPort;
 import com.cruscelta.domain.model.ArchetypeCard;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Component
-public class ArchetypeCardJsonLoader implements ArchetypeCardLoader {
+public class ArchetypeCardLoaderJsonAdapter implements ArchetypeCardLoaderPort {
     private final List<ArchetypeCard> cards;
     private static final String [] CARDS_FILES = {
             "/archetypes/cups_archetypes.json",
@@ -21,7 +21,7 @@ public class ArchetypeCardJsonLoader implements ArchetypeCardLoader {
             "/archetypes/major_archetypes.json"
     };
 
-    ArchetypeCardJsonLoader() throws IOException {
+    ArchetypeCardLoaderJsonAdapter() throws IOException {
         var mapper = new ObjectMapper();
         var loadedCards = new ArrayList<ArchetypeCard>();
 

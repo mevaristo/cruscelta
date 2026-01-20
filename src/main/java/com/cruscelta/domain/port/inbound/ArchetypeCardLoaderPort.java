@@ -4,6 +4,6 @@ import com.cruscelta.domain.model.ArchetypeCard;
 
 import java.util.List;
 
-public interface ArchetypeCardLoader {
+public interface ArchetypeCardLoaderPort {
     List<ArchetypeCard> load();
 }
