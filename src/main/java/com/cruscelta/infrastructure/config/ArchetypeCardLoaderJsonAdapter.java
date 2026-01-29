@@ -1,7 +1,7 @@
 package com.cruscelta.infrastructure.config;
 
 import com.cruscelta.domain.port.inbound.ArchetypeCardLoaderPort;
-import com.cruscelta.domain.model.ArchetypeCard;
+import com.cruscelta.domain.entity.ArchetypeCard;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.stereotype.Component;

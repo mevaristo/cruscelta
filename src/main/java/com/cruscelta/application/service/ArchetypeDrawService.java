@@ -2,7 +2,7 @@ package com.cruscelta.application.service;
 
 import com.cruscelta.domain.port.inbound.ArchetypeCardLoaderPort;
 import com.cruscelta.domain.port.inbound.ArchetypeDrawUseCase;
-import com.cruscelta.domain.model.ArchetypeCard;
+import com.cruscelta.domain.entity.ArchetypeCard;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

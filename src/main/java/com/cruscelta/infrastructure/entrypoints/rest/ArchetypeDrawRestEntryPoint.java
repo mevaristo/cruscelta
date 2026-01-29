@@ -1,7 +1,7 @@
 package com.cruscelta.infrastructure.entrypoints.rest;
 
 import com.cruscelta.domain.port.inbound.ArchetypeDrawUseCase;
-import com.cruscelta.domain.model.ArchetypeCard;
+import com.cruscelta.domain.entity.ArchetypeCard;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
