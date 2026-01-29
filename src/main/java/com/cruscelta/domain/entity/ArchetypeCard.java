@@ -1,4 +1,4 @@
-package com.cruscelta.domain.model;
+package com.cruscelta.domain.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -11,4 +11,5 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class ArchetypeCard {
     private String id;
+    private String name;
 }

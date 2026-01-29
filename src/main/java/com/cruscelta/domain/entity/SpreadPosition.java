@@ -1,4 +1,4 @@
-package com.cruscelta.domain;
+package com.cruscelta.domain.entity;
 
 public class SpreadPosition {
     private String id;
