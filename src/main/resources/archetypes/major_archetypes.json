@@ -1,68 +1,68 @@
 [
   {
-    "id": "FOOL"
+    "id": "The Fool"
   },
   {
-    "id": "MAGICIAN"
+    "id": "The Magician"
   },
   {
-    "id": "HIGH_PRIESTESS"
+    "id": "The High Priestess"
   },
   {
-    "id": "EMPRESS"
+    "id": "The Empress"
   },
   {
-    "id": "EMPEROR"
+    "id": "The Emperor"
   },
   {
-    "id": "HIEROPHANT"
+    "id": "The Hierophant"
   },
   {
-    "id": "LOVERS"
+    "id": "The Lovers"
   },
   {
-    "id": "CHARIOT"
+    "id": "The Chariot"
   },
   {
-    "id": "STRENGTH"
+    "id": "Strength"
   },
   {
-    "id": "HERMIT"
+    "id": "The Hermit"
   },
   {
-    "id": "WHEEL_FORTUNE"
+    "id": "Wheel of Fortune"
   },
   {
-    "id": "JUSTICE"
+    "id": "Justice"
   },
   {
-    "id": "HANGED_MAN"
+    "id": "The Hanged Man"
   },
   {
-    "id": "DEATH"
+    "id": "Death"
   },
   {
-    "id": "TEMPERANCE"
+    "id": "Temperance"
   },
   {
-    "id": "DEVIL"
+    "id": "The Devil"
   },
   {
-    "id": "TOWER"
+    "id": "The Tower"
   },
   {
-    "id": "STAR"
+    "id": "The Star"
   },
   {
-    "id": "MOON"
+    "id": "The Moon"
   },
   {
-    "id": "SUN"
+    "id": "The Sun"
   },
   {
-    "id": "JUDGMENT"
+    "id": "Judgement"
   },
   {
-    "id": "WORLD"
+    "id": "The World"
   }
 ]
