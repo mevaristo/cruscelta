@@ -6,6 +6,5 @@ import java.util.List;
 
 public interface VectorStorePort {
     void save(List<ArchetypeCardDocument> documents);
-
-    ArchetypeCardDocument queryCard(String queryText);
+    void save(ArchetypeCardDocument document);
 }
