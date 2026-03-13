@@ -1,12 +1,9 @@
 package com.cruscelta.infrastructure.entrypoints.rest;
 
+import com.cruscelta.domain.entity.ArchetypeCardDocument;
 import com.cruscelta.domain.port.inbound.ArchetypeDrawUseCase;
-import com.cruscelta.domain.entity.ArchetypeCard;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -16,13 +13,22 @@ import java.util.List;
 public class ArchetypeDrawRestEntryPoint {
     private final ArchetypeDrawUseCase archetypeDrawUseCase;
 
+    @GetMapping("/draw")
+    public List<ArchetypeCardDocument> draw(@RequestParam int quantity, @RequestParam(defaultValue = "false") boolean enriched) {
+        if (enriched) {
+            return archetypeDrawUseCase.drawEnriched(quantity);
+        }
+
+        return archetypeDrawUseCase.draw(quantity);
+    }
+
     @GetMapping("/{quantity}")
-    public List<ArchetypeCard> draw(@PathVariable int quantity) {
+    public List<ArchetypeCardDocument> drawEnriched(@PathVariable int quantity) {
         return archetypeDrawUseCase.draw(quantity);
     }
 
     @GetMapping("/view-deck")
-    public List<ArchetypeCard> viewDeck() {
+    public List<ArchetypeCardDocument> viewDeck() {
         return archetypeDrawUseCase.viewDeck();
     }
 }

@@ -1,6 +1,6 @@
 package com.cruscelta.infrastructure.config;
 
-import com.cruscelta.domain.entity.ArchetypeCard;
+import com.cruscelta.domain.entity.ArchetypeCardDocument;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -17,7 +17,7 @@ class ArchetypeCardLoaderJsonAdapterTest {
     void shouldLoadCardsFromAllJsonFiles() throws IOException {
         var loader = new ArchetypeCardLoaderJsonAdapter();
 
-        List<ArchetypeCard> cards = loader.load();
+        var cards = loader.load();
 
         assertThat(cards).isNotEmpty();
     }
@@ -27,7 +27,7 @@ class ArchetypeCardLoaderJsonAdapterTest {
     void shouldLoadExpectedTotalNumberOfCards() throws IOException {
         var loader = new ArchetypeCardLoaderJsonAdapter();
 
-        List<ArchetypeCard> cards = loader.load();
+        var cards = loader.load();
 
         // Standard tarot deck: 22 major arcana + 14x4 minor arcana suits = 78
         assertThat(cards).hasSize(78);
@@ -38,10 +38,10 @@ class ArchetypeCardLoaderJsonAdapterTest {
     void shouldLoadCardsWithNonNullIds() throws IOException {
         var loader = new ArchetypeCardLoaderJsonAdapter();
 
-        List<ArchetypeCard> cards = loader.load();
+        var cards = loader.load();
 
         assertThat(cards).allSatisfy(card ->
-                assertThat(card.getId()).isNotNull().isNotBlank());
+                assertThat(card.cardName()).isNotNull().isNotBlank());
     }
 
     @Test
@@ -49,8 +49,8 @@ class ArchetypeCardLoaderJsonAdapterTest {
     void shouldContainKnownMajorArcanaCards() throws IOException {
         var loader = new ArchetypeCardLoaderJsonAdapter();
 
-        List<ArchetypeCard> cards = loader.load();
-        List<String> cardIds = cards.stream().map(ArchetypeCard::getId).toList();
+        var cards = loader.load();
+        List<String> cardIds = cards.stream().map(ArchetypeCardDocument::cardName).toList();
 
         assertThat(cardIds).contains("The Fool", "The Magician", "The High Priestess");
     }
@@ -60,8 +60,8 @@ class ArchetypeCardLoaderJsonAdapterTest {
     void shouldContainKnownCupsSuitCards() throws IOException {
         var loader = new ArchetypeCardLoaderJsonAdapter();
 
-        List<ArchetypeCard> cards = loader.load();
-        List<String> cardIds = cards.stream().map(ArchetypeCard::getId).toList();
+        var cards = loader.load();
+        List<String> cardIds = cards.stream().map(ArchetypeCardDocument::cardName).toList();
 
         assertThat(cardIds).contains("Ace of Cups", "Two of Cups", "King of Cups");
     }
@@ -71,7 +71,7 @@ class ArchetypeCardLoaderJsonAdapterTest {
     void shouldReturnImmutableList() throws IOException {
         var loader = new ArchetypeCardLoaderJsonAdapter();
 
-        List<ArchetypeCard> cards = loader.load();
+        var cards = loader.load();
 
         assertThat(cards).isUnmodifiable();
     }
@@ -81,8 +81,8 @@ class ArchetypeCardLoaderJsonAdapterTest {
     void shouldReturnSameListOnSubsequentCalls() throws IOException {
         var loader = new ArchetypeCardLoaderJsonAdapter();
 
-        List<ArchetypeCard> firstCall = loader.load();
-        List<ArchetypeCard> secondCall = loader.load();
+        var firstCall = loader.load();
+        var secondCall = loader.load();
 
         assertThat(firstCall).isSameAs(secondCall);
     }
@@ -92,8 +92,8 @@ class ArchetypeCardLoaderJsonAdapterTest {
     void shouldNotContainDuplicateCardIds() throws IOException {
         var loader = new ArchetypeCardLoaderJsonAdapter();
 
-        List<ArchetypeCard> cards = loader.load();
-        List<String> cardIds = cards.stream().map(ArchetypeCard::getId).toList();
+        var cards = loader.load();
+        List<String> cardIds = cards.stream().map(ArchetypeCardDocument::cardName).toList();
 
         assertThat(cardIds).doesNotHaveDuplicates();
     }

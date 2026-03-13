@@ -1,44 +1,44 @@
 [
   {
-    "id": "Ace of Cups"
+    "cardName": "Ace of Cups"
   },
   {
-    "id": "Two of Cups"
+    "cardName": "Two of Cups"
   },
   {
-    "id": "Three of Cups"
+    "cardName": "Three of Cups"
   },
   {
-    "id": "Four of Cups"
+    "cardName": "Four of Cups"
   },
   {
-    "id": "Five of Cups"
+    "cardName": "Five of Cups"
   },
   {
-    "id": "Six of Cups"
+    "cardName": "Six of Cups"
   },
   {
-    "id": "Seven of Cups"
+    "cardName": "Seven of Cups"
   },
   {
-    "id": "Eight of Cups"
+    "cardName": "Eight of Cups"
   },
   {
-    "id": "Nine of Cups"
+    "cardName": "Nine of Cups"
   },
   {
-    "id": "Ten of Cups"
+    "cardName": "Ten of Cups"
   },
   {
-    "id": "Page of Cups"
+    "cardName": "Page of Cups"
   },
   {
-    "id": "Knight of Cups"
+    "cardName": "Knight of Cups"
   },
   {
-    "id": "Queen of Cups"
+    "cardName": "Queen of Cups"
   },
   {
-    "id": "King of Cups"
+    "cardName": "King of Cups"
   }
 ]

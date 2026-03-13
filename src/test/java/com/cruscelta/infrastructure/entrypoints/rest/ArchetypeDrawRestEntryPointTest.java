@@ -1,6 +1,6 @@
 package com.cruscelta.infrastructure.entrypoints.rest;
 
-import com.cruscelta.domain.entity.ArchetypeCard;
+import com.cruscelta.domain.entity.ArchetypeCardDocument;
 import com.cruscelta.domain.port.inbound.ArchetypeDrawUseCase;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
@@ -36,16 +36,16 @@ class ArchetypeDrawRestEntryPointTest {
         @DisplayName("should return 200 and drawn cards when quantity is valid")
         void shouldReturn200AndDrawnCards() throws Exception {
             var cards = List.of(
-                    ArchetypeCard.builder().id("The Fool").build(),
-                    ArchetypeCard.builder().id("The Magician").build()
+                    ArchetypeCardDocument.builder().cardName("The Fool").build(),
+                    ArchetypeCardDocument.builder().cardName("The Magician").build()
             );
             when(archetypeDrawUseCase.draw(2)).thenReturn(cards);
 
             mockMvc.perform(get("/archetype-draw/2"))
                     .andExpect(status().isOk())
                     .andExpect(jsonPath("$", hasSize(2)))
-                    .andExpect(jsonPath("$[0].id").value("The Fool"))
-                    .andExpect(jsonPath("$[1].id").value("The Magician"));
+                    .andExpect(jsonPath("$[0].cardName").value("The Fool"))
+                    .andExpect(jsonPath("$[1].cardName").value("The Magician"));
         }
 
         @Test
@@ -84,16 +84,16 @@ class ArchetypeDrawRestEntryPointTest {
         @DisplayName("should return 200 and the full deck")
         void shouldReturn200AndFullDeck() throws Exception {
             var deck = List.of(
-                    ArchetypeCard.builder().id("The Fool").build(),
-                    ArchetypeCard.builder().id("The Magician").build(),
-                    ArchetypeCard.builder().id("Ace of Cups").build()
+                    ArchetypeCardDocument.builder().cardName("The Fool").build(),
+                    ArchetypeCardDocument.builder().cardName("The Magician").build(),
+                    ArchetypeCardDocument.builder().cardName("Ace of Cups").build()
             );
             when(archetypeDrawUseCase.viewDeck()).thenReturn(deck);
 
             mockMvc.perform(get("/archetype-draw/view-deck"))
                     .andExpect(status().isOk())
                     .andExpect(jsonPath("$", hasSize(3)))
-                    .andExpect(jsonPath("$[0].id").value("The Fool"));
+                    .andExpect(jsonPath("$[0].cardName").value("The Fool"));
         }
 
         @Test

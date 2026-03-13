@@ -1,68 +1,68 @@
 [
   {
-    "id": "The Fool"
+    "cardName": "The Fool"
   },
   {
-    "id": "The Magician"
+    "cardName": "The Magician"
   },
   {
-    "id": "The High Priestess"
+    "cardName": "The High Priestess"
   },
   {
-    "id": "The Empress"
+    "cardName": "The Empress"
   },
   {
-    "id": "The Emperor"
+    "cardName": "The Emperor"
   },
   {
-    "id": "The Hierophant"
+    "cardName": "The Hierophant"
   },
   {
-    "id": "The Lovers"
+    "cardName": "The Lovers"
   },
   {
-    "id": "The Chariot"
+    "cardName": "The Chariot"
   },
   {
-    "id": "Strength"
+    "cardName": "Strength"
   },
   {
-    "id": "The Hermit"
+    "cardName": "The Hermit"
   },
   {
-    "id": "Wheel of Fortune"
+    "cardName": "Wheel of Fortune"
   },
   {
-    "id": "Justice"
+    "cardName": "Justice"
   },
   {
-    "id": "The Hanged Man"
+    "cardName": "The Hanged Man"
   },
   {
-    "id": "Death"
+    "cardName": "Death"
   },
   {
-    "id": "Temperance"
+    "cardName": "Temperance"
   },
   {
-    "id": "The Devil"
+    "cardName": "The Devil"
   },
   {
-    "id": "The Tower"
+    "cardName": "The Tower"
   },
   {
-    "id": "The Star"
+    "cardName": "The Star"
   },
   {
-    "id": "The Moon"
+    "cardName": "The Moon"
   },
   {
-    "id": "The Sun"
+    "cardName": "The Sun"
   },
   {
-    "id": "Judgement"
+    "cardName": "Judgement"
   },
   {
-    "id": "The World"
+    "cardName": "The World"
   }
 ]

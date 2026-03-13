@@ -1,6 +1,6 @@
 package com.cruscelta.domain.port.inbound;
 
-import com.cruscelta.domain.entity.ArchetypeCard;
+import com.cruscelta.domain.entity.ArchetypeCardDocument;
 
 import java.util.List;
 
@@ -10,11 +10,13 @@ public interface ArchetypeDrawUseCase {
      * @param quantity Number of archetype cards to draw
      * @return List of randomly drawn archetype cards
      */
-    List<ArchetypeCard> draw(int quantity);
+    List<ArchetypeCardDocument> draw(int quantity);
 
     /**
      * View the entire deck of archetype cards.
      * @return List of all archetype cards in the deck.
      */
-    List<ArchetypeCard> viewDeck();
+    List<ArchetypeCardDocument> viewDeck();
+
+    List<ArchetypeCardDocument> drawEnriched(int quantity);
 }

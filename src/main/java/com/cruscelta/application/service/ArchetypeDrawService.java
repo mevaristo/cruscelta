@@ -1,8 +1,9 @@
 package com.cruscelta.application.service;
 
+import com.cruscelta.domain.entity.ArchetypeCardDocument;
 import com.cruscelta.domain.port.inbound.ArchetypeCardLoaderPort;
 import com.cruscelta.domain.port.inbound.ArchetypeDrawUseCase;
-import com.cruscelta.domain.entity.ArchetypeCard;
+import com.cruscelta.domain.port.outbound.VectorStoreRetrieverPort;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -17,33 +18,41 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ArchetypeDrawService implements ArchetypeDrawUseCase {
     private final ArchetypeCardLoaderPort archetypeCardLoader;
+    private final VectorStoreRetrieverPort vectorStoreRetriever;
 
     @Override
-    public List<ArchetypeCard> draw(int quantity) {
+    public List<ArchetypeCardDocument> draw(int quantity) throws IndexOutOfBoundsException {
         var deck = shuffle();
         
         if (quantity > 0 && quantity <= deck.size()) {
             return deck.subList(0, quantity);
         } else {
-            log.warn("Requested quantity {} is out of bounds. Deck size is {}.", quantity, deck.size());
+            log.error("Requested quantity {} is out of bounds. Deck size is {}.", quantity, deck.size());
 
-            return List.of();
+            throw new IndexOutOfBoundsException();
         }
     }
 
     @Override
-    public List<ArchetypeCard> viewDeck() {
+    public List<ArchetypeCardDocument> viewDeck() {
         return List.copyOf(archetypeCardLoader.load());
     }
 
-    private List<ArchetypeCard> shuffle() {
+    @Override
+    public List<ArchetypeCardDocument> drawEnriched(int quantity) {
+        var cards = this.draw(quantity);
+
+        return cards
+                .stream()
+                .map(card -> vectorStoreRetriever.queryCard(card.cardName()))
+                .toList();
+    }
+
+    private List<ArchetypeCardDocument> shuffle() {
         var archetypeCards = new ArrayList<>(List.copyOf(archetypeCardLoader.load()));
-        
-        log.debug("List before shuffle: {}", archetypeCards);
 
         Collections.shuffle(archetypeCards, new SecureRandom());
 
-        log.debug("List after shuffle: {}", archetypeCards);
         return archetypeCards;
     }
 

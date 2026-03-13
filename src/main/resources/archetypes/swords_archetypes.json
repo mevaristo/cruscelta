@@ -1,44 +1,44 @@
 [
   {
-    "id": "Ace of Swords"
+    "cardName": "Ace of Swords"
   },
   {
-    "id": "Two of Swords"
+    "cardName": "Two of Swords"
   },
   {
-    "id": "Three of Swords"
+    "cardName": "Three of Swords"
   },
   {
-    "id": "Four of Swords"
+    "cardName": "Four of Swords"
   },
   {
-    "id": "Five of Swords"
+    "cardName": "Five of Swords"
   },
   {
-    "id": "Six of Swords"
+    "cardName": "Six of Swords"
   },
   {
-    "id": "Seven of Swords"
+    "cardName": "Seven of Swords"
   },
   {
-    "id": "Eight of Swords"
+    "cardName": "Eight of Swords"
   },
   {
-    "id": "Nine of Swords"
+    "cardName": "Nine of Swords"
   },
   {
-    "id": "Ten of Swords"
+    "cardName": "Ten of Swords"
   },
   {
-    "id": "Page of Swords"
+    "cardName": "Page of Swords"
   },
   {
-    "id": "Knight of Swords"
+    "cardName": "Knight of Swords"
   },
   {
-    "id": "Queen of Swords"
+    "cardName": "Queen of Swords"
   },
   {
-    "id": "King of Swords"
+    "cardName": "King of Swords"
   }
 ]

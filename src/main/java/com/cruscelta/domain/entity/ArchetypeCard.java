@@ -10,6 +10,5 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ArchetypeCard {
-    private String id;
-    private String name;
+    private String cardName;
 }

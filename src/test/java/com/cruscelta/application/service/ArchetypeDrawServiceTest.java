@@ -1,6 +1,6 @@
 package com.cruscelta.application.service;
 
-import com.cruscelta.domain.entity.ArchetypeCard;
+import com.cruscelta.domain.entity.ArchetypeCardDocument;
 import com.cruscelta.domain.port.inbound.ArchetypeCardLoaderPort;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -16,6 +16,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
@@ -28,16 +29,16 @@ class ArchetypeDrawServiceTest {
     @InjectMocks
     private ArchetypeDrawService archetypeDrawService;
 
-    private List<ArchetypeCard> sampleDeck;
+    private List<ArchetypeCardDocument> sampleDeck;
 
     @BeforeEach
     void setUp() {
         sampleDeck = List.of(
-                ArchetypeCard.builder().id("Ace of Cups").build(),
-                ArchetypeCard.builder().id("Two of Cups").build(),
-                ArchetypeCard.builder().id("Three of Cups").build(),
-                ArchetypeCard.builder().id("The Fool").build(),
-                ArchetypeCard.builder().id("The Magician").build()
+                ArchetypeCardDocument.builder().cardName("Ace of Cups").build(),
+                ArchetypeCardDocument.builder().cardName("Two of Cups").build(),
+                ArchetypeCardDocument.builder().cardName("Three of Cups").build(),
+                ArchetypeCardDocument.builder().cardName("The Fool").build(),
+                ArchetypeCardDocument.builder().cardName("The Magician").build()
         );
     }
 
@@ -50,7 +51,7 @@ class ArchetypeDrawServiceTest {
         void shouldReturnExactNumberOfCards() {
             when(archetypeCardLoader.load()).thenReturn(sampleDeck);
 
-            List<ArchetypeCard> result = archetypeDrawService.draw(3);
+            var result = archetypeDrawService.draw(3);
 
             assertThat(result).hasSize(3);
         }
@@ -60,7 +61,7 @@ class ArchetypeDrawServiceTest {
         void shouldReturnOneCard() {
             when(archetypeCardLoader.load()).thenReturn(sampleDeck);
 
-            List<ArchetypeCard> result = archetypeDrawService.draw(1);
+            var result = archetypeDrawService.draw(1);
 
             assertThat(result).hasSize(1);
         }
@@ -70,7 +71,7 @@ class ArchetypeDrawServiceTest {
         void shouldReturnEntireDeckWhenQuantityEqualsDeckSize() {
             when(archetypeCardLoader.load()).thenReturn(sampleDeck);
 
-            List<ArchetypeCard> result = archetypeDrawService.draw(sampleDeck.size());
+            var result = archetypeDrawService.draw(sampleDeck.size());
 
             assertThat(result).hasSize(sampleDeck.size());
         }
@@ -80,7 +81,7 @@ class ArchetypeDrawServiceTest {
         void shouldReturnOnlyCardsFromOriginalDeck() {
             when(archetypeCardLoader.load()).thenReturn(sampleDeck);
 
-            List<ArchetypeCard> result = archetypeDrawService.draw(3);
+            var result = archetypeDrawService.draw(3);
 
             assertThat(result).allSatisfy(card ->
                     assertThat(sampleDeck).contains(card));
@@ -91,44 +92,26 @@ class ArchetypeDrawServiceTest {
         void shouldReturnNoDuplicateCards() {
             when(archetypeCardLoader.load()).thenReturn(sampleDeck);
 
-            List<ArchetypeCard> result = archetypeDrawService.draw(5);
+            var result = archetypeDrawService.draw(5);
 
             assertThat(result).doesNotHaveDuplicates();
-        }
-
-        @Test
-        @DisplayName("should return empty list when quantity is zero")
-        void shouldReturnEmptyListWhenQuantityIsZero() {
-            List<ArchetypeCard> result = archetypeDrawService.draw(0);
-
-            assertThat(result).isEmpty();
-        }
-
-        @Test
-        @DisplayName("should return empty list when quantity is negative")
-        void shouldReturnEmptyListWhenQuantityIsNegative() {
-            List<ArchetypeCard> result = archetypeDrawService.draw(-1);
-
-            assertThat(result).isEmpty();
         }
 
         @Test
         @DisplayName("should return empty list when quantity exceeds deck size")
         void shouldReturnEmptyListWhenQuantityExceedsDeckSize() {
             when(archetypeCardLoader.load()).thenReturn(sampleDeck);
+            var exceedingSize = 100;
 
-            List<ArchetypeCard> result = archetypeDrawService.draw(100);
-
-            assertThat(result).isEmpty();
+            assertThat(sampleDeck.size()).isLessThan(exceedingSize);
+            assertThrows(IndexOutOfBoundsException.class, () -> archetypeDrawService.draw(exceedingSize));
         }
 
         @ParameterizedTest
         @ValueSource(ints = {-5, -1, 0})
-        @DisplayName("should return empty list for non-positive quantities")
+        @DisplayName("should throw index out of bounds exception for non-positive quantities")
         void shouldReturnEmptyListForNonPositiveQuantities(int quantity) {
-            List<ArchetypeCard> result = archetypeDrawService.draw(quantity);
-
-            assertThat(result).isEmpty();
+            assertThrows(IndexOutOfBoundsException.class, () -> archetypeDrawService.draw(quantity));
         }
 
         @Test
@@ -137,11 +120,11 @@ class ArchetypeDrawServiceTest {
             when(archetypeCardLoader.load()).thenReturn(sampleDeck);
 
             boolean foundDifferentOrder = false;
-            List<ArchetypeCard> firstDraw = archetypeDrawService.draw(5);
+            var firstDraw = archetypeDrawService.draw(5);
 
             // Run multiple times — at least one should differ in order
             for (int i = 0; i < 20; i++) {
-                List<ArchetypeCard> nextDraw = archetypeDrawService.draw(5);
+                var nextDraw = archetypeDrawService.draw(5);
                 if (!firstDraw.equals(nextDraw)) {
                     foundDifferentOrder = true;
                     break;
@@ -173,7 +156,7 @@ class ArchetypeDrawServiceTest {
         void shouldReturnAllCards() {
             when(archetypeCardLoader.load()).thenReturn(sampleDeck);
 
-            List<ArchetypeCard> result = archetypeDrawService.viewDeck();
+            var result = archetypeDrawService.viewDeck();
 
             assertThat(result).hasSize(sampleDeck.size());
             assertThat(result).containsExactlyInAnyOrderElementsOf(sampleDeck);
@@ -184,7 +167,7 @@ class ArchetypeDrawServiceTest {
         void shouldReturnImmutableCopy() {
             when(archetypeCardLoader.load()).thenReturn(sampleDeck);
 
-            List<ArchetypeCard> result = archetypeDrawService.viewDeck();
+            var result = archetypeDrawService.viewDeck();
 
             assertThat(result).isUnmodifiable();
         }
@@ -194,7 +177,7 @@ class ArchetypeDrawServiceTest {
         void shouldReturnEmptyListWhenDeckIsEmpty() {
             when(archetypeCardLoader.load()).thenReturn(List.of());
 
-            List<ArchetypeCard> result = archetypeDrawService.viewDeck();
+            var result = archetypeDrawService.viewDeck();
 
             assertThat(result).isEmpty();
         }
